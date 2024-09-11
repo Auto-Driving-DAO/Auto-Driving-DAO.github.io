@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document with Sections</title>
+    <style>
+        .toc-button {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .toc-button:hover {
+            background-color: #0056b3;
+        }
+        section {
+            margin: 50px 0; /* Spacing between sections */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header with Section Names -->
+<header>
+    <h1>Document Header</h1>
+    <h2>Sections</h2>
+    <nav class="toc">
+        <a class="toc-button" href="#section1">Section 1</a>
+        <a class="toc-button" href="#section2">Section 2</a>
+        <a class="toc-button" href="#section3">Section 3</a>
+    </nav>
+</header>
+
+<!-- Sections -->
+<section class="section" id="section1">
+    <h2>Section 1</h2>
+    <p>This is the content for Section 1.</p>
+</section>
+
+<section class="section" id="section2">
+    <h2>Section 2</h2>
+    <p>This is the content for Section 2.</p>
+</section>
+
+<section class="section" id="section3">
+    <h2>Section 3</h2>
+    <p>This is the content for Section 3.</p>
+</section>
+
+</body>
+</html>
