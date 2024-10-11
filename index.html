@@ -65,7 +65,7 @@
                   </div>
                   -->
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Developing Open-source End-to-end Autonomous Control Systems</span>
+                    <span class="author-block">Developing Open-source End-to-end Autonomous Systems</span>
                     <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
                   </div>
 
@@ -146,7 +146,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>Autonomous control technologies are revolutionizing transportation and mobility, with the groundbreaking development of data-driven end-to-end autonomous driving models at its core, offering unprecedented intelligence, efficiency and reliability. However, the industry still lacks fully deployable, open-source solutions for autonomous driving and control tasks. High costs, lengthy training and testing cycles, and reliance on proprietary data have kept this vision out of reach—until now.</p>
+          <p>Autonomous control technologies are revolutionizing transportation and mobility, offering unprecedented intelligence, efficiency and reliability. However, the industry still lacks fully deployable, open-source solutions for autonomous driving and control tasks. High costs, lengthy training and testing cycles, and reliance on proprietary data have kept this vision out of reach—until now.</p>
           <p><strong>RoboDrive</strong> is an open-source platform dedicated to changing this landscape. We aim at delivering end-to-end systems that revolutionize autonomous driving and control with a collaborative ecosystem, where global innovators come together to develop cutting-edge, data-driven solutions. This initiative is facilitated by the <a href="https://mirror.xyz/orablog.eth/xYMD27tN23ppbKCluB9faytF_W6M1hKXTuKcfkm3D50">Initial Model Offering</a> (IMO), which tokenizes AI models on chain, enabling collaborative contributions, efficient resource coordination, and equitable compensation.</p>
           <p>We’re not just advancing autonomy—we’re shaping the future of intelligent systems, driving transformative change in the industry through our innovative approach to delivering high-quality solutions that are democratized, resource-efficient, and sustainable.</p>
         </div>
@@ -221,18 +221,36 @@
         <h3 class="title is-4">Who Are We?</h3>
         <div class="content has-text-justified">
           <p><strong>RoboDrive</strong> is backed by a collaboration of pioneers from academia, industry, and blockchain innovation. Together, they bring the experience, knowledge, and infrastructure needed to make open-source autonomous driving a reality:</p>
-          <ul>
-              <li><strong>Academic Leaders:</strong> Researchers from prestigious institutions such as Stanford University bring cutting-edge expertise, spearheading the research and development of the RoboDrive models.</li>
-              <li><strong>Industry Partners:</strong> We are partnering with global industry leaders in car manufacturing, who provide invaluable practical experience and data. Their expertise and resources are essential for developing and deploying a fully functional system.</li>
-              <li><strong>Blockchain Innovators:</strong> Initial Model Offering (IMO) provides the essential blockchain infrastructure for decentralized governance, enabling trustless, verifiable AI solutions on-chain. IMO plays a pivotal role in managing contributions and fairly rewarding the community.</li>
-          </ul>
-          <p>By bringing together these diverse leaders, RoboDrive prioritizes the development of open-source solutions for autonomous control. We invite researchers, builders, and innovators from around the world to join our community and help shape the future of robotics and control.</p>
 
+          <ul>
+            <li>
+              <strong>Academic Leaders:</strong> Researchers from prestigious institutions such as Stanford University bring cutting-edge expertise, spearheading the research and development of the RoboDrive models.
+              <ul>
+                <li>
+                  <strong>Main Contributors:</strong>
+                </li>
+                <li>
+                  <a href="https://xinmeng.su.domains/">Xin Z</a>: PhD Candidate, Stanford ICME (Computational & Mathematical Engineering) 
+                  <a href="https://xinmeng.su.domains/">[LinkedIn]</a>
+                </li>
+                <li>Vincent Yun Lou: CS/AI PhD, Stanford University</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Industry Partners:</strong> We collaborate with global leaders in the automotive and robotics industries, whose practical experience and data are crucial to developing and deploying fully functional autonomous systems.
+            </li>
+            <li>
+              <strong>Blockchain Innovators:</strong> Initial Model Offering (IMO) provides the essential blockchain infrastructure for decentralized governance, enabling trustless, verifiable AI solutions on-chain. IMO plays a pivotal role in managing contributions and fairly rewarding the community.
+            </li>
+          </ul>
+
+          <p>By bringing together these diverse leaders, RoboDrive prioritizes the development of open-source solutions for autonomous control. We invite researchers, builders, and innovators from around the world to join our community and help shape the future of robotics and control.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
 
 
@@ -244,9 +262,10 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Technical Architecture</h2>
         <div class="content has-text-justified">
-          <p>
-            The proposed autonomous driving and control system is an end-to-end multimodal framework that leverages advanced transformer-based architectures to address the complexity of dynamic driving environments. The system is modular, scalable, and capable of handling diverse tasks ranging from perception and decision-making to reasoning and language alignment. More precisely, the system is structured into four key components:
+          <p>The first model we propose is <strong>Open AutoDriving (OAD)</strong>, a transformer-based end-to-end multimodal framework that can dynamically navigate complex driving environments.
+            The system is modular, scalable, and capable of handling diverse tasks ranging from perception and decision-making to reasoning and language alignment. More precisely, the system is structured into four key components:
           </p>
+
           <ul>
             <li>The AutoDriving Multimodal Perception System (OAD-VIT)</li>
             <li>The AutoDriving Visual Language Alignment System (OAD-QFormer)</li>
@@ -274,38 +293,12 @@
               Finally, the <strong>Reasoning and Decision System</strong> integrates cutting-edge large language models (LLMs) to process 3D environmental data and make high-level driving decisions. This system not only predicts actions based on current surroundings but also enables counterfactual reasoning and scene-based questioning, adding a layer of human interpretability to the vehicle’s decision-making process.
             </li>
           </ul>
-
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Technical Paragraph 2 -->
-<section class="section hero is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <div class="content has-text-justified">
-          <ul>
-            <li>
-              The <strong>Multimodal Perception System</strong> is the foundation, integrating high-resolution data from various sensors such as video, LiDAR, and Radar. This system ensures that the vehicle can accurately perceive its surroundings by converting complex multi-view inputs into sparse yet information-rich queries, allowing for efficient processing while maintaining critical spatial and semantic details.
-            </li>
-            <li>
-              Building on this, the <strong>Visual-Language Alignment System</strong> enhances the vehicle's ability to not only perceive but also reason about its environment by aligning visual inputs with language-based reasoning. This step allows the system to understand scene context and make informed decisions without the need for extensive computational resources, facilitating real-time decision-making even in resource-constrained settings.
-            </li>
-            <li>
-              To manage the multiple driving tasks—such as object detection, lane detection, and motion planning—the <strong>Multi-task Driving System</strong> is designed to handle various tasks simultaneously using the same transformer-based query architecture. This design allows the system to efficiently process multiple inputs and produce task-specific outputs, ensuring that the vehicle can navigate complex driving scenarios with minimal latency.
-            </li>
-            <li>
-              Finally, the <strong>Reasoning and Decision System</strong> integrates cutting-edge large language models (LLMs) to process 3D environmental data and make high-level driving decisions. This system not only predicts actions based on current surroundings but also enables counterfactual reasoning and scene-based questioning, adding a layer of human interpretability to the vehicle’s decision-making process.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- End of Technical Paragraph -->
 <section class="section hero is-small">
@@ -342,30 +335,30 @@
           <h3 class="title is-4">ii. Contributors</h3>
           <ol>
               <li><strong>Investors:</strong>
-                  <p>Through token ownership, investors gain voting rights in the DAO and stand to benefit from the appreciation of tokens as the platform scales and the models mature.</p>
+                Through token ownership, investors gain voting rights in the DAO and stand to benefit from the appreciation of tokens as the platform scales and the models mature.
               </li>
               <li><strong>Original Equipment Manufacturers (OEMs):</strong>
-                  <p>OEMs can leverage RoboDrive models as a foundational technology for their automobile and robotic systems. OEMs that contribute data and other resources to the ecosystem enhance the models' performance, fostering a mutually beneficial relationship between the developers and manufacturers.</p>
+                Developers and manufacturers can leverage RoboDrive models as a foundational technology for their automobile and robotic systems. Original equipment manufacturers (OEMs) and users can contribute data and other resources to the ecosystem to enhance the models' performance, fostering a mutually beneficial relationship between the developers and manufacturers.
               </li>
               <li><strong>Developers and Researchers:</strong>
-                  <p>The open-source framework invites contributions from developers, researchers, and academic institutions, who are compensated through computing resources and token rewards.</p>
+                The open-source framework invites contributions from developers, researchers, and academic institutions, who are compensated through computing resources and token rewards.
               </li>
               <li><strong>End-Users and Subscribers:</strong>
-                  <p>The RoboDrive models will power various autonomous control related applications, which can be accessed by end-users and subscribers.</p>
+                The RoboDrive models will power various autonomous control related applications, which can be accessed by end-users and subscribers.
               </li>
               <li><strong>Cloud Computing Providers:</strong>
-                  <p>Providers of cloud computing resources, essential for the training of large-scale AI models, are integrated into the ecosystem and compensated in ROBO tokens. This ensures that adequate computing resources are always available to support the continuous development of ROBO models.</p>
+                Providers of cloud computing resources, essential for the training of large-scale AI models, are integrated into the ecosystem and compensated in ROBO tokens. This ensures that adequate computing resources are always available to support the continuous development of ROBO models.
               </li>
           </ol>
 
           <h3 class="title is-4">iii. Funding and Resources</h3>
           <p>Securing funding and resources is crucial for AI model development:</p>
           <ul>
-              <li><strong>Computing Resources:</strong> Partnerships with cloud providers ensure access to necessary computing power, compensated in ROBO tokens.</li>
-              <li><strong>Data Acquisition:</strong> OEMs are incentivized to share high-quality data in exchange for ROBO tokens, enhancing model competitiveness.</li>
+            <li><strong>Data Acquisition:</strong> OEMs are incentivized to share high-quality data in exchange for ROBO tokens, enhancing model competitiveness.</li>
+            <li><strong>Computing Resources:</strong> Partnerships with cloud providers ensure access to necessary computing power, compensated in ROBO tokens.</li>
           </ul>
 
-          <p>These mechanisms ensure continuous resource flow for evolving ROBO models, positioning the RoboDrive Community as a leader in open-source autonomous driving technology.</p>
+          <p>These mechanisms ensure continuous resource flow for evolving ROBO models, positioning the RoboDrive Community as a leader in open-source autonomous control technology.</p>
 
         </div>
       </div>
@@ -524,7 +517,7 @@
         <div class="content">
 
           <p class="columns is-centered has-text-centered">
-            This page was built using the  <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank"> Academic Project Page Template</a>.
+            This page was built using the  <a href=" https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">  academic project template</a>.
           
           </p>
           <p class="columns is-centered has-text-centered">@2024 RoboDrive.org</p>
