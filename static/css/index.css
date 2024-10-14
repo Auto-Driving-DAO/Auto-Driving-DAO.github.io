@@ -1,5 +1,11 @@
-body {
+/* body {
   font-family: 'Noto Sans', sans-serif;
+}
+*/
+
+/* Possible Fonts: Merriweather (serif), Roboto Slab */
+body {
+  font-family: 'Lora', serif; /* Change CSS font style */
 }
 
 

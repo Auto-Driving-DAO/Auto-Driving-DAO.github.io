@@ -1,537 +1,179 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoboDrive: Open-Source Robotics for All</title>
+    <!--Merriweather, serif-->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Lora', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px 120px; /* Increased left and right padding */
+            background-color: #000; /* Default background color (night mode) */
+            color: #fff; /* Default text color (night mode) */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition for theme change */
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            margin-top: 50px;
+            width: 100%; /* Ensure it spans the full width */
+        }
 
+        h1 {
+            margin-top: 2em; /* Increased padding */
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+        h3 {
+            font-size: 2em;
+            margin-top: 2em; /* Increased padding before each new subtitle */
+            margin-bottom: 0.5em;
+            text-align: left; /* Aligning h3 to the left */
+        }
+        p {
+            text-align: justify;
+            margin: 0.5em 0;
+        }
+        blockquote {
+            margin: 1em 0; /* Space outside the blockquote */
+            padding: 0.6em; /* Space inside the blockquote (on all sides) */
+            padding-left: 1em;
+            border-left: 4px solid #fff;
+        }
+        ul {
+            margin: 1em 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 0.5em;
+        }
+        a {
+            color: #1E90FF; /* Dodger Blue for normal link color */
+            text-decoration: underline; /* Underline links */
+        }
+        
+        a:visited {
+            color: rgb(144, 97, 232); /* Medium Purple for visited link color */
+        }
+        /* Light Mode Styles */
+        .light-mode {
+            background-color: #fff; /* Light background color */
+            color: #000; /* Dark text color */
+        }
+        .light-mode blockquote {
+            border-left: 4px solid #000; /* Dark border for blockquote in light mode */
+        }
+              
+        body.light-mode {
+            background-color: #f9f9f9;
+            color: #000;
+        }
 
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+        body.light-mode blockquote {
+            background-color: #e5e5e5;
+            color: #000;
+        }
+        .theme-toggle {
+            position: absolute; /* Position in top right corner */
+            top: 20px;
+            right: 30px;
+            background: transparent; /* Background color */
+            border: none; /* No border */
+            font-size: 16px; /* Font size */
+            cursor: pointer; /* Pointer cursor */
+            color: inherit; /* Inherit color from body */
+        }
+    </style>
 
-
-  <title>Auto Driving DAO</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
-
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
+    <script>
+        // Function to toggle light/dark mode
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle('light-mode');
+        }
+    </script>
 </head>
 <body>
+    <button class="theme-toggle" onclick="toggleTheme()">Light/Dark</button>
 
+    <h1>RoboDrive: Open-Source Robotics for All</h1>
+    
+    <h3>Driving the Future of Embodied AI</h3>
+    <p>Open source is the key to unlocking the full potential of robotics. Through shared knowledge, open data, and collaborative innovation, RoboDrive is shaping the future of embodied AI. By fostering global collaboration among developers, researchers, startups, and resource providers, we are building a sustainable foundation for the development of intelligent systems that can improve millions of lives.</p>
+    
+    <blockquote>
+        <em>RoboDrive makes robotics development accessible to all, driving a future where embodied AI is affordable, adaptable, and sustainable.</em>
+    </blockquote>
 
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">RoboDrive:<br>Driving the Future of Robotics and Mobility</h1>
-            <!--
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
-                  -->
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Developing Open-source End-to-end Autonomous Systems</span>
-                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
-                  </div>
+    <h3>Why RoboDrive?</h3>
+    <p>In today's rapidly advancing technological landscape, embodied AI is set to transform industries and daily life. Yet, despite growing interest in robotics, significant barriers remain. Robotics development is hindered by proprietary data, high hardware costs, and limited access to resources, making it difficult for startups and individual developers to enter the field, stifling innovation and delaying the widespread deployment of robotics systems into everyday life.</p>
+    
+    <p><strong>RoboDrive</strong> is an open-source platform dedicated to breaking these barriers. Our mission is to empower developers and startups worldwide by providing an open-source collaborative ecosystem for robotics development, where global innovators come together to develop cutting-edge, data-driven solutions—from hardware design, data collection, AI model training to production.</p>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="static/pdfs/OAD Whitepaper.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Whitepaper</span>
-                      </a>
-                    </span>
+    <h3>What Do We Do?</h3>
+    <p>The current robotics landscape is dominated by proprietary solutions from large companies, limiting the reach and accessibility of embodied AI technologies. Meanwhile, open-source initiatives often lack the resources, data, and incentives needed to scale and become applicable in real life. However, thanks to our innovative technology of IMO, which tokenizes AI models on chain, RoboDrive is able to address these challenges by providing a platform that fosters collaboration among individuals, researchers, startups, and industry partners, ensuring that each party gets rewarded correspondingly.</p>
+    
+    <blockquote><em>Through collaborative efforts, we design robotics technologies to meet diverse needs—from healthcare and home automation to industrial robotics and beyond. At RoboDrive, we’re not just advancing autonomy—we’re shaping the future of intelligent systems that enhance lives, making embodied AI more affordable, accessible, and sustainable.</em></blockquote>
 
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/Auto-Driving-DAO/OAD" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
+    <h3>Who Are We?</h3>
+    <p><strong>RoboDrive</strong> is backed by a collaboration of pioneers from academia, industry, and blockchain innovation. Together, they bring the experience, knowledge, and infrastructure needed to make open-source autonomous driving a reality:</p>
 
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="#partnerships" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-handshake"></i>
-                      </span>
-                      <span>Partnerships</span>
-                    </a>
-                  </span>
+    <ul>
+        <li><strong>Academic Leaders:</strong> Researchers from prestigious institutions such as Stanford University bring cutting-edge expertise, spearheading the research and development of the RoboDrive models.</li>
+        <li><strong>Industry Partners:</strong> We collaborate with global leaders in the automotive and robotics industries, whose practical experience and data are crucial to developing and deploying fully functional autonomous systems.</li>
+        <li><strong>Blockchain Innovators:</strong> Initial Model Offering (IMO) provides the essential blockchain infrastructure for decentralized governance, enabling trustless, verifiable AI solutions on-chain. IMO plays a pivotal role in managing contributions and fairly rewarding the community.</li>
+    </ul>
 
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="#contact" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fas fa-envelope"></i>
-                  </span>
-                  <span>Contact</span>
-                </a>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <p><strong>A shoutout to our platform’s Main Leads:</strong></p>
+    <ul>
+        <li><strong><a href="https://xinmeng.su.domains/">Xin Z</a></strong>: ICME PhD Candidate, Stanford University</li>
+        <li><strong>Vincent Lau</strong>: CS/AI PhD, Stanford University</li>
+    </ul>
 
+    <h3>Partnerships</h3>
+    <p>At RoboDrive, we believe in the power of collaboration to advance the field of embodied AI. We invite you to embark on this exciting journey with us, bringing your unique strengths and perspectives to the table. Below are the types of partners we're eager to connect with, as well as what we can offer in return.</p>
 
-<!-- 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h3 class="subtitle has-text-centered"> What is AutoDriving DAO?
-      </h3>
-    </div>
-  </div>
-</section>
--->
+    <ul>
+        <li><strong>Developers and Individual Contributors</strong>
+            <p>RoboDrive provides a collaborative platform where individual contributors can collaborate on meaningful projects, showcase their work, gain recognition, and access resources for professional development.</p>
+        </li>
+        <li><strong>Academic Researchers</strong>
+            <p>RoboDrive provides a platform for academic partners to disseminate their research findings, collaborate on joint projects, and access diverse datasets for experimentation. This partnership can provide students and labs with hands-on experience in real-world robotics applications.</p>
+        </li>
+        <li><strong>Startups</strong>
+            <p>RoboDrive offers startups access to our network of developers, research partners, data and GPU providers, and funding opportunities. We support startups by connecting them with potential collaborators, customers, and investors to help them scale their solutions and reach the market more effectively.</p>
+        </li>
+        <li><strong>Industry Partners</strong>
+            <p>RoboDrive provides industry partners with access to our open-source platform and collaborative network, empowering them to leverage community-driven innovations and facilitating joint research and development projects. Additionally, RoboDrive organizes hackathons and contests, allowing our developers to work alongside industry partners to address real-world problems through innovative solutions.</p>
+        </li>
+    </ul>
 
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>Autonomous control technologies are revolutionizing transportation and mobility, offering unprecedented intelligence, efficiency and reliability. However, the industry still lacks fully deployable, open-source solutions for autonomous driving and control tasks. High costs, lengthy training and testing cycles, and reliance on proprietary data have kept this vision out of reach—until now.</p>
-          <p><strong>RoboDrive</strong> is an open-source platform dedicated to changing this landscape. We aim at delivering end-to-end systems that revolutionize autonomous driving and control with a collaborative ecosystem, where global innovators come together to develop cutting-edge, data-driven solutions. This initiative is facilitated by the <a href="https://mirror.xyz/orablog.eth/xYMD27tN23ppbKCluB9faytF_W6M1hKXTuKcfkm3D50">Initial Model Offering</a> (IMO), which tokenizes AI models on chain, enabling collaborative contributions, efficient resource coordination, and equitable compensation.</p>
-          <p>We’re not just advancing autonomy—we’re shaping the future of intelligent systems, driving transformative change in the industry through our innovative approach to delivering high-quality solutions that are democratized, resource-efficient, and sustainable.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+    <h3>Join Us</h3>
+    <p>The RoboDrive community is open to all—anyone interested in the future of embodied AI can join for free. We welcome all potential partners to reach out and explore how we can work together to drive the future of embodied AI. For partnership inquiries, please reach out to <a href="mailto:contact@robodrive.org">contact@robodrive.org</a>.</p>
+    
+    <p>If you're an individual interested in joining our community, please fill out this <a href="https://forms.gle/ZbppXN4wMBqy5Q7C6">form</a>.
+    For research opportunities or collaborations on projects and events, don't hesitate to contact us at the same email. If you're a startup seeking funding or resources, please review the partnerships section above before reaching out with your website and/or pitch deck. We look forward to welcoming you aboard!</p>
 
-<!-- Our Vision -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Introduction</h2>
-        
-        <div class="content has-text-justified">
-          <p>
-            The autonomous driving industry is undergoing a significant transformation, shifting from traditional rule-based systems to data-driven, end-to-end models. Here’s how these two approaches differ:
-          </p>
-          <ul>
-            <li><strong>Rule-Based Systems</strong>: These rely on predefined rules and algorithms to navigate driving scenarios. While effective in controlled environments, they often struggle with the unpredictability of real-world situations, requiring extensive management of thousands of corner cases (e.g., dealing with a plastic bag on the road).</li>
-            <li><strong>End-to-End Systems</strong>: In contrast, end-to-end models leverage AI to learn directly from vast amounts of data. These models interpret sensor data and make driving decisions in real time, providing a flexible and robust solution that adapts to complex driving environments.</li>
-          </ul>
-          <p>Currently, industry leaders exploring end-to-end models, such as Tesla, Waymo, Cruise, Baidu, Huawei, SenseTime, and Xpeng, operate as closed-source proprietary companies. Meanwhile, open-source implementations like OpenPilot face limitations in feature support, resource allocation, and community incentives. The industry is in dire need of a true open-source end-to-end autonomous driving model. To meet this challenge, <strong>RoboDrive</strong> proposes an open-source framework to build end-to-end autonomous control systems designed for flexibility and robustness, where contributors can collaborate and be fairly rewarded for their contributions.</p>
+</body>
 
-          <p>If Tesla represents Apple with its closed-source models, then <strong>RoboDrive</strong> embodies Android, laying the groundwork for open-source foundational models accessible to all vehicles.</p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- The AutoDriving DAO Initiative -->
-<section class="section hero-is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Why Open Source?</h2>
-        
-        <div class="content has-text-justified">
-
-          <p>By embracing an open-source approach, we invite the global community to contribute to and refine these models to meet their specific needs.</p>
-
-          <ul>
-              <li><strong>Efficiency through Shared Investment:</strong> Minimizes duplication among OEMs, empowering developers to customize solutions effectively.</li>
-              
-              <li><strong>Accelerated Development and Deployment:</strong> Facilitates the rapid introduction of autonomous control technologies, allowing swift adaptation to market demands.</li>
-              
-              <li><strong>Access to Diverse Data Sources:</strong> Enhances AI model training with abundant data resources, improving navigation and decision-making in real-world scenarios.</li>
-              
-              <li><strong>Collaborative Innovation:</strong> Fosters continuous improvement through global collaboration and shared expertise.</li>
-              
-              <li><strong>Improved Safety and Reliability:</strong> Increases trust and transparency through diverse developer insights and thorough code vetting.</li>
-              
-              <li><strong>Sustainability and Resource Efficiency:</strong> Promotes resource-efficient practices, minimizing training costs and optimizing computational resources.</li>
-          </ul>
-
-        </div>
-      </div>
-    </div>    
-  </div>
-</section>
-
-<!-- Who Are We -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h3 class="title is-4">Who Are We?</h3>
-        <div class="content has-text-justified">
-          <p><strong>RoboDrive</strong> is backed by a collaboration of pioneers from academia, industry, and blockchain innovation. Together, they bring the experience, knowledge, and infrastructure needed to make open-source autonomous driving a reality:</p>
-
-          <ul>
-            <li>
-              <strong>Academic Leaders:</strong> Researchers from prestigious institutions such as Stanford University bring cutting-edge expertise, spearheading the research and development of the RoboDrive models.
-              <ul>
-                <li>
-                  <strong>Main Contributors:</strong>
-                </li>
-                <li>
-                  <a href="https://xinmeng.su.domains/">Xin Z</a>: PhD Candidate, Stanford ICME (Computational & Mathematical Engineering) 
-                  <a href="https://xinmeng.su.domains/">[LinkedIn]</a>
-                </li>
-                <li>Vincent Yun Lou: CS/AI PhD, Stanford University</li>
-              </ul>
-            </li>
-            <li>
-              <strong>Industry Partners:</strong> We collaborate with global leaders in the automotive and robotics industries, whose practical experience and data are crucial to developing and deploying fully functional autonomous systems.
-            </li>
-            <li>
-              <strong>Blockchain Innovators:</strong> Initial Model Offering (IMO) provides the essential blockchain infrastructure for decentralized governance, enabling trustless, verifiable AI solutions on-chain. IMO plays a pivotal role in managing contributions and fairly rewarding the community.
-            </li>
-          </ul>
-
-          <p>By bringing together these diverse leaders, RoboDrive prioritizes the development of open-source solutions for autonomous control. We invite researchers, builders, and innovators from around the world to join our community and help shape the future of robotics and control.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-<!-- Technical Paragraph 1 -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Technical Architecture</h2>
-        <div class="content has-text-justified">
-          <p>The first model we propose is <strong>Open AutoDriving (OAD)</strong>, a transformer-based end-to-end multimodal framework that can dynamically navigate complex driving environments.
-            The system is modular, scalable, and capable of handling diverse tasks ranging from perception and decision-making to reasoning and language alignment. More precisely, the system is structured into four key components:
-          </p>
-
-          <ul>
-            <li>The AutoDriving Multimodal Perception System (OAD-VIT)</li>
-            <li>The AutoDriving Visual Language Alignment System (OAD-QFormer)</li>
-            <li>The AutoDriving Multi-task Driving System (OAD-MTDS)</li>
-            <li>The AutoDriving Reasoning and Decision System (OAD-RDS)</li>
-          </ul>
-          <p>
-            <img src="/static/images/OAD-VIT.png" alt="OAD-VIT: Multimodal Vision Transformer">
-          </p>
-          <p>
-            The Robo-VIT handles sensor fusion and spatial feature extraction through vision, LiDAR, and RiDAR inputs, while Robo-QFormer bridges visual and language modalities to enhance real-time scene understanding. OAD-MTDS enables task-specific predictions for object detection, lane detection, and other critical driving tasks using perception queries. Finally, the OAD-RDS integrates a large language model to facilitate high-level decision-making, path planning, and control generation based on 3D perception. Each module is interconnected through a query-based architecture, allowing efficient information exchange, while maintaining computational efficiency and scalability for diverse driving scenarios.
-          </p>
-
-          <ul>
-            <li>
-              The <strong>Multimodal Perception System</strong> is the foundation, integrating high-resolution data from various sensors such as video, LiDAR, and Radar. This system ensures that the vehicle can accurately perceive its surroundings by converting complex multi-view inputs into sparse yet information-rich queries, allowing for efficient processing while maintaining critical spatial and semantic details.
-            </li>
-            <li>
-              Building on this, the <strong>Visual-Language Alignment System</strong> enhances the vehicle's ability to not only perceive but also reason about its environment by aligning visual inputs with language-based reasoning. This step allows the system to understand scene context and make informed decisions without the need for extensive computational resources, facilitating real-time decision-making even in resource-constrained settings.
-            </li>
-            <li>
-              To manage the multiple driving tasks—such as object detection, lane detection, and motion planning—the <strong>Multi-task Driving System</strong> is designed to handle various tasks simultaneously using the same transformer-based query architecture. This design allows the system to efficiently process multiple inputs and produce task-specific outputs, ensuring that the vehicle can navigate complex driving scenarios with minimal latency.
-            </li>
-            <li>
-              Finally, the <strong>Reasoning and Decision System</strong> integrates cutting-edge large language models (LLMs) to process 3D environmental data and make high-level driving decisions. This system not only predicts actions based on current surroundings but also enables counterfactual reasoning and scene-based questioning, adding a layer of human interpretability to the vehicle’s decision-making process.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- End of Technical Paragraph -->
-<section class="section hero is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <div class="content has-text-justified">
-          <p>
-            <img src="/static/images/OAD.png" alt="AutoDriving Agent Diagram">
-          </p>
-          <p>
-            Together, these four components form a cohesive architecture that balances the complexity of perception, language understanding, task execution, and reasoning, making OAD a powerful platform for autonomous driving.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DAO Governance -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Funding & Governance</h2>
-        <div class="content has-text-justified">
-
-          <h3 class="title is-4">i. Core Principles</h3>
-          <ul>
-              <li><strong>Open Source:</strong> OAD models are open-source, promoting transparency and collaboration among researchers, developers, OEMs, and the community.</li>
-              <li><strong>IMO Tokenization:</strong> The (<strong>ERC-7641</strong>) <strong>standard</strong> ensures transparent revenue sharing among contributors and token holders.</li>
-          </ul>
-
-          <h3 class="title is-4">ii. Contributors</h3>
-          <ol>
-              <li><strong>Investors:</strong>
-                Through token ownership, investors gain voting rights in the DAO and stand to benefit from the appreciation of tokens as the platform scales and the models mature.
-              </li>
-              <li><strong>Original Equipment Manufacturers (OEMs):</strong>
-                Developers and manufacturers can leverage RoboDrive models as a foundational technology for their automobile and robotic systems. Original equipment manufacturers (OEMs) and users can contribute data and other resources to the ecosystem to enhance the models' performance, fostering a mutually beneficial relationship between the developers and manufacturers.
-              </li>
-              <li><strong>Developers and Researchers:</strong>
-                The open-source framework invites contributions from developers, researchers, and academic institutions, who are compensated through computing resources and token rewards.
-              </li>
-              <li><strong>End-Users and Subscribers:</strong>
-                The RoboDrive models will power various autonomous control related applications, which can be accessed by end-users and subscribers.
-              </li>
-              <li><strong>Cloud Computing Providers:</strong>
-                Providers of cloud computing resources, essential for the training of large-scale AI models, are integrated into the ecosystem and compensated in ROBO tokens. This ensures that adequate computing resources are always available to support the continuous development of ROBO models.
-              </li>
-          </ol>
-
-          <h3 class="title is-4">iii. Funding and Resources</h3>
-          <p>Securing funding and resources is crucial for AI model development:</p>
-          <ul>
-            <li><strong>Data Acquisition:</strong> OEMs are incentivized to share high-quality data in exchange for ROBO tokens, enhancing model competitiveness.</li>
-            <li><strong>Computing Resources:</strong> Partnerships with cloud providers ensure access to necessary computing power, compensated in ROBO tokens.</li>
-          </ul>
-
-          <p>These mechanisms ensure continuous resource flow for evolving ROBO models, positioning the RoboDrive Community as a leader in open-source autonomous control technology.</p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Data & GPU -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Data & GPU Resources</h2>
-        <div class="content has-text-justified">
-          <h5>Data Collection and Contribution</h5>
-          <p>
-            OEMs deploying OAD models in real-world driving scenarios will generate valuable data, including sensor readings and driving patterns. They are incentivized to contribute these data back to the ecosystem for OAD tokens in return, thus creating a positive feedback loop where better data leads to better models and more value for all participants.
-          </p>
-          <p>
-            To further augment data collection, we introduce gamified data labeling through a simulation game where players engage in driving scenarios, labeling data such as obstacles and traffic conditions. Participants earn tokens, turning data labeling into a fun, community-driven effort that improves the model’s training dataset.
-          </p>
-          <h5>GPU and Computing Resources</h5>
-          <p>
-            Initially, traditional cloud computing services will be used for AI model training, with payments made in OAD tokens. In addition to external cloud services, we have access to open data centers with 10,000 GPUs, dedicated to supporting OAD models through Initial Model Offering (IMO). This ensures contributors have access to top-tier infrastructure, promoting active development without funding or resource limitations.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Partnerships -->
-<section class="section hero is-light" id="partnerships">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Partnerships</h2>
-      
-        <div class="content has-text-justified">
-          <h3 class="has-text-centered">For Developers and Automotive Manufacturers</h3>
-          <p>
-            Collaborating with RoboDrive offers several key benefits that extend beyond traditional development approaches:
-          </p>
-          <ul>
-            <li>
-              <strong>Empower Your Model Development</strong>: By joining our platform, you can actively shape the development of cutting-edge models for robotics and control, ensuring the solutions we build align with your specific needs and vision. With ownership rights over the models created, you gain the flexibility to modify and integrate them into your production lines. This adaptability ensures seamless customization to meet the unique requirements of your vehicles.
-            </li>
-            <li>
-              <strong>Cost-Efficient Sustainable Development</strong>: Collaborating in an open-source environment significantly reduces development costs. By sharing resources and working on the same platform, you avoid duplicating work that others have already done. Additionally, this collaborative approach greatly reduces environmental impact, helping your company achieve its sustainability goals. You’ll be developing cutting-edge technology while minimizing both costs and environmental footprint.
-            </li>
-            <li>
-              <strong>Increase Brand Influence and Recognition</strong>: Collaborating with RoboDrive enhances your reputation for innovation and leadership, highlighting your commitment to <strong>sustainable development</strong> and reduced <strong>CO2 emissions</strong>. By promoting <strong>open collaboration</strong>, you strengthen your position as a forward-thinking, responsible brand, aligned with global trends in <strong>sustainability</strong> and <strong>transparency</strong>. This visibility will not only boost brand recognition and solidify your leadership in the space but also attract top developer talent from around the world to your projects.
-            </li>
-            <li>
-              <strong>Access to Expert Community</strong>: Our platform brings together top researchers and engineers from the robotics and autonomous driving industries. Collaborating with RoboDribe enables you to tap into a pool of world-class talent that continuously pushes the boundaries of autonomous systems innovation.
-            </li>
-            <li>
-              <strong>Access to University Collaborations</strong>: The RoboDrive initiative partners internationally with leading university labs, which allows you to stay ahead of the curve in terms of the latest academic breakthroughs.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h3 class="title is-4">For Researchers</h3>
-        <div class="content has-text-justified">
-          <p>
-            RoboDrive provides an unparalleled opportunity for researchers working in the field of AI and autonomous systems:
-          </p>
-          <ul>
-            <li>
-              <strong>Access to GPU Resources</strong>: We understand that high-performance computing is essential for training large-scale AI models. As a collaborator, you will have access to cutting-edge GPU resources, enabling you to run complex simulations and accelerate your research.
-            </li>
-            <li>
-              <strong>Real-World Data</strong>: One of the most significant hurdles in autonomous systems research is access to high-quality, real-world data. Through our partnerships with OEMs and robotics companies, you will be able to work with real-world driving data to refine and improve your models, pushing the limits of autonomous technology.
-            </li>
-            <li>
-              <strong>Collaborative Innovation</strong>: RoboDrive brings together experts from both academia and industry, creating a unique space for knowledge-sharing and joint innovation. As a researcher, you will have the opportunity to collaborate with other experts and apply theories in real-world scenarios, bridging the gap between academic research and industry impact.
-            </li>
-            <li>
-              <strong>Influence on Industry Practices</strong>: By contributing to RoboDrive's AI models, you will be directly influencing the design and implementation of autonomous systems in real-world vehicles and robots. Your research will have an immediate and tangible effect on the development of future autonomous systems.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Youtube video -->
-<!--
-  <section class="hero is-small is-light">
-    <div class="hero-body">
-      <div class="container">
-        
-        <h2 class="title is-3">Video Presentation</h2>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            
-            <div class="publication-video">
-              
-              <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
--->
-
-
-<!-- Paper poster 
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">OAD Model Whitepaper</h2>
-      <div class="columns is-centered has-text-centered"></div>
-        <div class="column is-four-fifths">
-
-          <iframe  src="static/pdfs/OAD Whitepaper.pdf" width="100%" height="550">
-          </iframe>
-        </div>
-      </div>  
-    </div>
-  </section>
--->
-
-
-<section class="section hero is-light" id="contact">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Contact</h2>
-        <div class="content has-text-justified">
-          <p>For business inquiries or collaboration opportunities, we would love to hear from you! Please reach out via email at <a href="mailto:contact@robodrive.org" style="color: blue;">contact@robodrive.org</a>, and we’ll get back to you as soon as possible.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <!-- 
-          <p class="columns is-centered has-text-centered">
-            This page was built using the  <a href=" https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">  academic project template</a>.
-          </p>
-           -->
-          <p class="columns is-centered has-text-centered">@2024 RoboDrive.org</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<footer>
+    <p>© 2024 RoboDrive.org. All rights reserved.</p>
 </footer>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+</html>
 
-    <!-- End of Statcounter Code -->
 
-  </body>
-  </html>
+
+
+
+
+
+
+
+
