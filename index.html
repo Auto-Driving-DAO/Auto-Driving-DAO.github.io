@@ -4,8 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RoboDrive: Open-Source Robotics for All</title>
-    <!--Merriweather, serif-->
+    <!--possible fonts: Merriweather, serif-->
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <!--for icons (fontawesome)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!--for buttons (css bulma)-->
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     
     <style>
         body {
@@ -35,6 +43,10 @@
             margin-top: 2em; /* Increased padding before each new subtitle */
             margin-bottom: 0.5em;
             text-align: left; /* Aligning h3 to the left */
+        }
+        h1, h3 {
+          font-family: 'Lora', serif; /* Use Lora font */
+          font-weight: 700; /* Bold weight */
         }
         p {
             text-align: justify;
@@ -99,11 +111,45 @@
         }
     </script>
 </head>
+
 <body>
     <button class="theme-toggle" onclick="toggleTheme()">Light/Dark</button>
+    <div class="container">
+      <div class="header">
+        <h1>RoboDrive: Open-Source Robotics for All</h1>
+        
+        <div class="column has-text-centered">
+          <div class="external-links">
+            <!-- External links for Discord, Twitter, and LinkedIn -->
+            <span class="link-block">
+              <a href="https://github.com/orgs/RoboDrive-org/repositories" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Projects</span>
+              </a>
+          </span>
+            <span class="link-block">
+                <a href="https://discord.com" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-discord"></i></span>
+                    <span>Discord</span>
+                </a>
+            </span>
+            <span class="link-block">
+                <a href="https://twitter.com" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-twitter"></i></span>
+                    <span>Twitter</span>
+                </a>
+            </span>
+            <span class="link-block">
+                <a href="https://linkedin.com" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-linkedin"></i></span>
+                    <span>LinkedIn</span>
+                </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <h1>RoboDrive: Open-Source Robotics for All</h1>
-    
     <h3>Driving the Future of Embodied AI</h3>
     <p>Open source is the key to unlocking the full potential of robotics. Through shared knowledge, open data, and collaborative innovation, RoboDrive is shaping the future of embodied AI. By fostering global collaboration among developers, researchers, startups, and resource providers, we are building a sustainable foundation for the development of intelligent systems that can improve millions of lives.</p>
     
