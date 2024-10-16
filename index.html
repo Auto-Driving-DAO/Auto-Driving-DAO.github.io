@@ -20,11 +20,30 @@
             font-family: 'Lora', serif;
             line-height: 1.6;
             margin: 0;
-            padding: 20px 120px; /* Increased left and right padding */
+            padding: 5vw; /* 20px 80px */
             background-color: #000; /* Default background color (night mode) */
             color: #fff; /* Default text color (night mode) */
             transition: background-color 0.3s, color 0.3s; /* Smooth transition for theme change */
         }
+
+                /* Styles for larger screens (PC) */
+        @media screen and (min-width: 768px) {
+            body {
+                padding: 20px 10vw; /* More horizontal padding on larger screens */
+            }
+        }
+
+        /* Styles for extra large screens */
+        @media screen and (min-width: 1200px) {
+            body {
+                padding: 20px 15vw; /* Even more padding on very large screens */
+            }
+        }
+        /* Default dark mode for bold text */
+        body strong, body b {
+            color: #fff;
+        }
+
         footer {
             text-align: center;
             padding: 10px;
@@ -78,6 +97,11 @@
             background-color: #fff; /* Light background color */
             color: #000; /* Dark text color */
         }
+
+        .light-mode strong, .light-mode b {
+            color: #000;
+        }
+
         .light-mode blockquote {
             border-left: 4px solid #000; /* Dark border for blockquote in light mode */
         }
@@ -100,6 +124,13 @@
             font-size: 16px; /* Font size */
             cursor: pointer; /* Pointer cursor */
             color: inherit; /* Inherit color from body */
+        }
+        /* Responsive adjustments for theme toggle button */
+        @media screen and (max-width: 767px) {
+            .theme-toggle {
+                top: 10px;
+                right: 10px;
+            }
         }
     </style>
 
@@ -173,14 +204,9 @@
     <ul>
         <li><strong>Academic Leaders:</strong> Researchers from prestigious institutions such as Stanford University bring cutting-edge expertise, spearheading the research and development of the RoboDrive models.</li>
         <li><strong>Industry Partners:</strong> We collaborate with global leaders in the automotive and robotics industries, whose practical experience and data are crucial to developing and deploying fully functional autonomous systems.</li>
-        <li><strong>Blockchain Innovators:</strong> Initial Model Offering (IMO) provides the essential blockchain infrastructure for decentralized governance, enabling trustless, verifiable AI solutions on-chain. IMO plays a pivotal role in managing contributions and fairly rewarding the community.</li>
+        <li><strong>Blockchain Innovators:</strong> Initial Model Offering (IMO) provides the essential blockchain infrastructure for decentralized governance, enabling resource sharing and trustless, verifiable AI solutions on-chain.</li>
     </ul>
 
-    <p><strong>A shoutout to our platform’s Main Leads:</strong></p>
-    <ul>
-        <li><strong><a href="https://xinmeng.su.domains/">Xin Z</a></strong>: ICME PhD Candidate, Stanford University</li>
-        <li><strong>Vincent Lau</strong>: CS/AI PhD, Stanford University</li>
-    </ul>
 
     <h3>Partnerships</h3>
     <p>At RoboDrive, we believe in the power of collaboration to advance the field of embodied AI. We invite you to embark on this exciting journey with us, bringing your unique strengths and perspectives to the table. Below are the types of partners we're eager to connect with, as well as what we can offer in return.</p>
@@ -200,11 +226,18 @@
         </li>
     </ul>
 
-    <h3>Join Us</h3>
-    <p>The RoboDrive community is open to all—anyone interested in the future of embodied AI can join for free. We welcome all potential partners to reach out and explore how we can work together to drive the future of embodied AI. For partnership inquiries, please reach out to <a href="mailto:contact@robodrive.org">contact@robodrive.org</a>.</p>
-    
-    <p>If you're an individual interested in joining our community, please fill out this <a href="https://forms.gle/ZbppXN4wMBqy5Q7C6">form</a>.
-    For research opportunities or collaborations on projects and events, don't hesitate to contact us at the same email. If you're a startup seeking funding or resources, please review the partnerships section above before reaching out with your website and/or pitch deck. We look forward to welcoming you aboard!</p>
+    <h3>Join ROBO now!</h3>
+    <p>The RoboDrive Community is open to all—anyone interested in the future of embodied AI can join for free. We welcome all potential partners to reach out and explore how we can work together to drive the future of embodied AI. For partnership inquiries, please reach out to <a href="mailto:contact@robodrive.org">contact@robodrive.org</a>.</p>
+    <br>
+    <p>
+        - <strong>For Individuals</strong>: Excited to join our vibrant community? Fill out our quick <a href="https://forms.gle/ZbppXN4wMBqy5Q7C6">online form</a> to see how we might be a mutual help.<br><br>
+        - <strong>For Researchers</strong>: Please share your research with our communal GitHub repo to help promote open-source collaboration! We’d love to hear from you, and your contributions are greatly appreciated.<br><br>
+        - <strong>For Startups</strong>: Ready to take your venture to the next level? Check out our partnerships section before reaching out with your website or pitch deck. We're eager to see your innovative ideas!<br><br>
+        - <strong>Call for Collaborations</strong>: Have ideas for collaborations? Connect with our community leader <a href="https://xinmeng.su.domains/">Xin Z.</a> on <a href="https://www.linkedin.com/in/xinmeng-zeng-a8b8a726b/">LinkedIn</a> to explore exciting projects and events.<br><br>
+        We look forward to welcoming you aboard!
+    </p>
+    <br><br>
+    <p>PS:<em> We will keep updating this website, introducing new features that will help our community members thrive while promoting greater collaborations.</em></p>
 
 </body>
 
